@@ -3,7 +3,7 @@
 Agui 包的中央索引。`agui install <包名>[@版本]` 默认读取：
 
 ```text
-https://raw.githubusercontent.com/gumeng23/AGUI-registry/main/index.json
+https://api.github.com/repos/gumeng23/AGUI-registry/contents/index.json
 ```
 
 ## 目录
@@ -72,7 +72,11 @@ mathx-0.1.0.zip
 
 ## 发布新包
 
-1. 在 `packages/src/<name>/` 准备 `agui-package.json` 和 `.ag` 文件。
+外部作者不需要仓库写权限，走 fork + Pull Request：
+
+1. 在 GitHub fork `gumeng23/AGUI-registry`，克隆自己的 fork。
+2. 新建分支，例如 `add-<name>`。
+3. 在 `packages/src/<name>/` 准备 `agui-package.json` 和 `.ag` 文件。
 2. 打包：
 
 ```powershell
@@ -85,8 +89,9 @@ Compress-Archive -Path packages/src/mathx/* -DestinationPath packages/mathx-0.1.
 (Get-FileHash packages/mathx-0.1.0.zip -Algorithm SHA256).Hash.ToLower()
 ```
 
-4. 在 `index.json` 添加版本，提交并推送。
-5. 用户安装：
+4. 在 `index.json` 添加版本，提交并推送到自己的 fork。
+5. 在 GitHub 向 `gumeng23/AGUI-registry` 的 `main` 分支发起 Pull Request。
+6. 维护者合并后，用户即可安装：
 
 ```powershell
 agui install mathx

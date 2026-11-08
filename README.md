@@ -110,6 +110,7 @@ agui install mathx --registry https://example.com/index.json
 - 校验成功后，`Auto merge` 工作流自动执行 squash merge 并删除分支，无需维护者添加标签。
 - 仓库已开启 `Allow auto-merge`；校验失败时不会合并。
 - 这是“校验通过即合并”模式：不会等待人工审查。提交前请确保包内容和来源可信。
+- 自动合并由仓库的 `Auto merge` workflow 使用 `GITHUB_TOKEN` 执行，贡献者不需要配置个人令牌。
 
 对应 workflow：
 

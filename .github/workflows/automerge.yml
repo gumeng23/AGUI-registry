@@ -1,8 +1,8 @@
 name: Auto merge
 
-# Maintainers opt in per PR by adding the "automerge" label. Validation must
-# pass first. Repository setting "Allow auto-merge" must be enabled, otherwise
-# `gh pr merge --auto` fails without merging anything.
+# Every PR that passes "Validate registry" is auto-merged. Repository setting
+# "Allow auto-merge" must be enabled, otherwise `gh pr merge --auto` fails
+# without merging anything.
 on:
   workflow_run:
     workflows: ["Validate registry"]
@@ -31,15 +31,10 @@ jobs:
           fi
           echo "number=$number" >> "$GITHUB_OUTPUT"
 
-      - name: Enable auto-merge when labeled
+      - name: Enable auto-merge
         if: steps.pr.outputs.number != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ steps.pr.outputs.number }}
         run: |
-          labels=$(gh pr view "$PR" --json labels --jq '.labels[].name')
-          if ! grep -qx 'automerge' <<< "$labels"; then
-            echo "PR #$PR 没有 automerge 标签，跳过"
-            exit 0
-          fi
           gh pr merge "$PR" --auto --squash --delete-branch

@@ -107,9 +107,9 @@ agui install mathx --registry https://example.com/index.json
 ## 自动校验与自动合并
 
 - 每个 PR 会自动运行 `Validate registry`：检查 `index.json`、zip 是否存在、SHA-256、`agui-package.json`、入口文件和路径越界。
-- 维护者给 PR 添加 `automerge` 标签后，校验通过时 `Auto merge` 工作流会执行 squash merge 并删除分支。
-- 仓库已开启 `Allow auto-merge`；如果校验失败，自动合并不会发生。
-- 外部贡献者不能自行添加标签，自动合并仍由维护者逐个授权。
+- 校验成功后，`Auto merge` 工作流自动执行 squash merge 并删除分支，无需维护者添加标签。
+- 仓库已开启 `Allow auto-merge`；校验失败时不会合并。
+- 这是“校验通过即合并”模式：不会等待人工审查。提交前请确保包内容和来源可信。
 
 对应 workflow：
 

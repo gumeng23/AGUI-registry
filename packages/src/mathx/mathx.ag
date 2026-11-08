@@ -1,0 +1,19 @@
+# mathx 0.1.0 - Agui 数学辅助库
+
+func clamp(v, lo, hi):
+    if v < lo:
+        return lo
+    if v > hi:
+        return hi
+    return v
+
+func lerp(a, b, t):
+    return a + (b - a) * t
+
+func round_to(v, digits=0):
+    p = 10
+    i = 1
+    while i < digits:
+        p = p * 10
+        i = i + 1
+    return num(format(v * p, "." + str(digits))) / p

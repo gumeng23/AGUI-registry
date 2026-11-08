@@ -1,0 +1,8 @@
+{
+  "name": "mathx",
+  "version": "0.1.0",
+  "description": "Agui 数学辅助库：clamp、lerp、round_to",
+  "entry": "mathx.ag",
+  "dependencies": {},
+  "agui": ">=0.9.2"
+}

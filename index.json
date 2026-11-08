@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "packages": {
+    "mathx": {
+      "description": "Agui 数学辅助库：clamp、lerp、round_to",
+      "latest": "0.1.0",
+      "versions": {
+        "0.1.0": {
+          "url": "https://raw.githubusercontent.com/gumeng23/AGUI-registry/main/packages/mathx-0.1.0.zip",
+          "sha256": "ca1baf19eb22f7b6a843980a77937cd5960e94404b232a020e32a83d1d71552f",
+          "entry": "mathx.ag",
+          "dependencies": {}
+        }
+      }
+    }
+  }
+}

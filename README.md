@@ -14,6 +14,13 @@ packages/<name>-<version>.zip  包归档
 packages/src/<name>/           归档源文件（便于审阅）
 ```
 
+## 可用包
+
+| 包 | 最新版本 | 说明 |
+|---|---|---|
+| `mathx` | 0.1.0 | 数学辅助函数 `clamp` / `lerp` / `round_to` |
+| `agui-ui` | 0.1.0 | Agui 精品 UI 组件：原生圆角按钮、卡片、徽章、标题与分隔线，要求 Agui >= 0.9.5 |
+
 ## index.json
 
 ```json

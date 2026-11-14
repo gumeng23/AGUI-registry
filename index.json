@@ -12,6 +12,18 @@
           "dependencies": {}
         }
       }
+    },
+    "agui-ui": {
+      "description": "Agui 精品 UI 组件：原生圆角按钮、卡片、徽章、标题与分隔线",
+      "latest": "0.1.0",
+      "versions": {
+        "0.1.0": {
+          "url": "https://raw.githubusercontent.com/gumeng23/AGUI-registry/main/packages/agui-ui-0.1.0.zip",
+          "sha256": "2eb612a592053f5a3210688bf22fb8ce072f477c4359187aba2711c5408da7ee",
+          "entry": "agui-ui.ag",
+          "dependencies": {}
+        }
+      }
     }
   }
 }
